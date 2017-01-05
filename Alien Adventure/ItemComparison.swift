@@ -9,6 +9,24 @@
 import Foundation
 
 func <(lhs: UDItem, rhs: UDItem) -> Bool {
+    let compare = lhs.rarity.rawValue - rhs.rarity.rawValue
+    switch compare {
+    case -5...(-1):
+        return true
+    case 0:
+        if lhs.baseValue < rhs.baseValue
+        {
+            return true
+        }else
+        {
+            return false
+        }
+    case 1...5:
+        return false
+        
+    default:
+        return true
+    }
     return true
 }
 
