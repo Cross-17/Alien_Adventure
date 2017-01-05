@@ -17,13 +17,28 @@ extension Hero {
         {
             return false
         }
-        
-        if shuffle == "abef" || shuffle == "badc" || shuffle == "abdc"
+        var mys1 = ""
+        var mys2 = ""
+        for char in shuffle.characters
         {
-            return false
+            for c in s1.characters
+            {
+                if(c == char)
+                {
+                    mys1.append(char)
+                    break
+                }
+            }
+            for c in s2.characters
+            {
+                if(c == char)
+                {
+                    mys2.append(char)
+                    break
+                }
+            }
         }
-        
-        return true
+        return mys1 == s1 && mys2 == s2
         
     }
     
